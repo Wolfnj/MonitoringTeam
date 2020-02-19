@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="94643324eaad4b43b74a3340f8d869f8" Name="Diagram1">
+        <EntityTypeShape EntityType="bikeshopdatabaseModel.METRIC" Width="1.5" PointX="3" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="bikeshopdatabaseModel.PAGE" Width="1.5" PointX="6" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="bikeshopdatabaseModel.TIME" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="bikeshopdatabaseModel.USER" Width="1.5" PointX="0.75" PointY="3.375" IsExpanded="true" />
+        <AssociationConnector Association="bikeshopdatabaseModel.FK__METRICS__TIME__29221CFB" ManuallyRouted="false" />
+        <AssociationConnector Association="bikeshopdatabaseModel.FK__METRICS__USERNAM__282DF8C2" ManuallyRouted="false" />
+        <AssociationConnector Association="bikeshopdatabaseModel.FK__PAGE__TIME__245D67DE" ManuallyRouted="false" />
+        <AssociationConnector Association="bikeshopdatabaseModel.FK__PAGE__USER__25518C17" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

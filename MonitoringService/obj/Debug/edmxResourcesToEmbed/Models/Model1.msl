@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="bikeshopdatabaseModelStoreContainer" CdmEntityContainer="bikeshopdatabaseEntities">
+    <EntitySetMapping Name="METRICS">
+      <EntityTypeMapping TypeName="bikeshopdatabaseModel.METRIC">
+        <MappingFragment StoreEntitySet="METRICS">
+          <ScalarProperty Name="SESSION_ID" ColumnName="SESSION_ID" />
+          <ScalarProperty Name="TIME" ColumnName="TIME" />
+          <ScalarProperty Name="USERNAME" ColumnName="USERNAME" />
+          <ScalarProperty Name="TIME_LOGGED_IN" ColumnName="TIME_LOGGED_IN" />
+          <ScalarProperty Name="TIME_LOGGED_OUT" ColumnName="TIME_LOGGED_OUT" />
+          <ScalarProperty Name="NUMBER_OF_PAGE_VIEWS" ColumnName="NUMBER_OF_PAGE_VIEWS" />
+          <ScalarProperty Name="SESSIONDURATION" ColumnName="SESSIONDURATION" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PAGEs">
+      <EntityTypeMapping TypeName="bikeshopdatabaseModel.PAGE">
+        <MappingFragment StoreEntitySet="PAGE">
+          <ScalarProperty Name="TIME" ColumnName="TIME" />
+          <ScalarProperty Name="PAGE_TITLE" ColumnName="PAGE_TITLE" />
+          <ScalarProperty Name="USER" ColumnName="USER" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TIMEs">
+      <EntityTypeMapping TypeName="bikeshopdatabaseModel.TIME">
+        <MappingFragment StoreEntitySet="TIME">
+          <ScalarProperty Name="TIME1" ColumnName="TIME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="USERs">
+      <EntityTypeMapping TypeName="bikeshopdatabaseModel.USER">
+        <MappingFragment StoreEntitySet="USER">
+          <ScalarProperty Name="USERNAME" ColumnName="USERNAME" />
+          <ScalarProperty Name="IP_ADDRESS" ColumnName="IP_ADDRESS" />
+          <ScalarProperty Name="COUNTRY" ColumnName="COUNTRY" />
+          <ScalarProperty Name="ADDRESS" ColumnName="ADDRESS" />
+          <ScalarProperty Name="CITY" ColumnName="CITY" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

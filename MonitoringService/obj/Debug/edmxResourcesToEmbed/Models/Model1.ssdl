@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="bikeshopdatabaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="METRICS">
+    <Key>
+      <PropertyRef Name="SESSION_ID" />
+    </Key>
+    <Property Name="SESSION_ID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="TIME" Type="varchar" MaxLength="50" />
+    <Property Name="USERNAME" Type="varchar" MaxLength="50" />
+    <Property Name="TIME_LOGGED_IN" Type="varchar" MaxLength="50" />
+    <Property Name="TIME_LOGGED_OUT" Type="varchar" MaxLength="50" />
+    <Property Name="NUMBER_OF_PAGE_VIEWS" Type="varchar" MaxLength="50" />
+    <Property Name="SESSIONDURATION" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="PAGE">
+    <Key>
+      <PropertyRef Name="PAGE_TITLE" />
+    </Key>
+    <Property Name="TIME" Type="varchar" MaxLength="50" />
+    <Property Name="PAGE_TITLE" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="USER" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="TIME">
+    <Key>
+      <PropertyRef Name="TIME" />
+    </Key>
+    <Property Name="TIME" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="USER">
+    <Key>
+      <PropertyRef Name="USERNAME" />
+    </Key>
+    <Property Name="USERNAME" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="IP_ADDRESS" Type="varchar" MaxLength="50" />
+    <Property Name="COUNTRY" Type="varchar" MaxLength="50" />
+    <Property Name="ADDRESS" Type="varchar" MaxLength="50" />
+    <Property Name="CITY" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <Association Name="FK__METRICS__TIME__29221CFB">
+    <End Role="TIME" Type="Self.TIME" Multiplicity="0..1" />
+    <End Role="METRICS" Type="Self.METRICS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TIME">
+        <PropertyRef Name="TIME" />
+      </Principal>
+      <Dependent Role="METRICS">
+        <PropertyRef Name="TIME" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__METRICS__USERNAM__282DF8C2">
+    <End Role="USER" Type="Self.USER" Multiplicity="0..1" />
+    <End Role="METRICS" Type="Self.METRICS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="USER">
+        <PropertyRef Name="USERNAME" />
+      </Principal>
+      <Dependent Role="METRICS">
+        <PropertyRef Name="USERNAME" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__PAGE__TIME__245D67DE">
+    <End Role="TIME" Type="Self.TIME" Multiplicity="0..1" />
+    <End Role="PAGE" Type="Self.PAGE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TIME">
+        <PropertyRef Name="TIME" />
+      </Principal>
+      <Dependent Role="PAGE">
+        <PropertyRef Name="TIME" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__PAGE__USER__25518C17">
+    <End Role="USER" Type="Self.USER" Multiplicity="0..1" />
+    <End Role="PAGE" Type="Self.PAGE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="USER">
+        <PropertyRef Name="USERNAME" />
+      </Principal>
+      <Dependent Role="PAGE">
+        <PropertyRef Name="USER" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="bikeshopdatabaseModelStoreContainer">
+    <EntitySet Name="METRICS" EntityType="Self.METRICS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PAGE" EntityType="Self.PAGE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TIME" EntityType="Self.TIME" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="USER" EntityType="Self.USER" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__METRICS__TIME__29221CFB" Association="Self.FK__METRICS__TIME__29221CFB">
+      <End Role="TIME" EntitySet="TIME" />
+      <End Role="METRICS" EntitySet="METRICS" />
+    </AssociationSet>
+    <AssociationSet Name="FK__METRICS__USERNAM__282DF8C2" Association="Self.FK__METRICS__USERNAM__282DF8C2">
+      <End Role="USER" EntitySet="USER" />
+      <End Role="METRICS" EntitySet="METRICS" />
+    </AssociationSet>
+    <AssociationSet Name="FK__PAGE__TIME__245D67DE" Association="Self.FK__PAGE__TIME__245D67DE">
+      <End Role="TIME" EntitySet="TIME" />
+      <End Role="PAGE" EntitySet="PAGE" />
+    </AssociationSet>
+    <AssociationSet Name="FK__PAGE__USER__25518C17" Association="Self.FK__PAGE__USER__25518C17">
+      <End Role="USER" EntitySet="USER" />
+      <End Role="PAGE" EntitySet="PAGE" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
